@@ -1,8 +1,7 @@
-package com.dailycodebuffer.SpringSecutity.controller;
+package com.dailycodebuffer.SpringSecutity;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class ContengtCongtroller {
@@ -19,6 +18,11 @@ public class ContengtCongtroller {
     @GetMapping("/user/home")
     public String handleuserhome(){
         return "home_user";
+    }
+
+    @GetMapping("/login")
+    public String handleLogin(){
+        return "custom_login";
     }
 
 

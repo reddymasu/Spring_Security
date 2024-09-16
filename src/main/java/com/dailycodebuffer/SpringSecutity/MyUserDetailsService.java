@@ -16,6 +16,8 @@ public class MyUserDetailsService implements UserDetailsService {
     @Autowired
     private MyUserRespository myUserRespository;
 
+    //used for automatically authenticating user credentials
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<MyUser> user =myUserRespository.findByUsername(username);
@@ -38,6 +40,7 @@ public class MyUserDetailsService implements UserDetailsService {
         if (user.getRole() == null) {
             return new String[]{"USER"};
         }
+        System.out.println("my user details serivec :"+user.getRole());
         return user.getRole().split(",");
     }
 }
